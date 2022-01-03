@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Button } from "./Button";
 import { Link } from "react-router-dom";
-import Button from "./Button";
 import "./NavBar.css";
 
-const NavBar = () => {
+function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -29,7 +29,8 @@ const NavBar = () => {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            TRVL <i className="fab fa-typo3" />
+            TRVL
+            <i class="fab fa-typo3" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -58,7 +59,8 @@ const NavBar = () => {
                 Products
               </Link>
             </li>
-            <li className="nav-item">
+
+            <li>
               <Link
                 to="/sign-up"
                 className="nav-links-mobile"
@@ -73,6 +75,6 @@ const NavBar = () => {
       </nav>
     </>
   );
-};
+}
 
-export default NavBar;
+export default Navbar;
